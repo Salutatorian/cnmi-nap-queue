@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  --color-navy: #0c2340;
+  --color-navy-2: #16365c;
+  --color-paper: #f4f7fb;
+  --color-ink: #142033;
+  --color-muted: #4c6078;
+  --color-line: #d5deea;
+  --color-good: #0d7a45;
+  --color-good-soft: #e7f6ee;
+  --color-warn: #8a5b00;
+  --color-warn-soft: #fff4d8;
+  --color-bad: #9d2436;
+  --color-bad-soft: #fdecee;
+  --color-gold: #a8843d;
+  --color-tv: #07111f;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  color: var(--color-ink);
+  background: var(--color-paper);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+:focus-visible {
+  outline: 3px solid #0b6bcb;
+  outline-offset: 2px;
+}
+
+.board[data-cols="1"] { grid-template-columns: minmax(0, 1fr); }
+.board[data-cols="2"] { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.board[data-cols="3"] { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.board[data-cols="4"] { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.board[data-cols="5"] { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+
+.board[data-density="roomy"] .visitor-name {
+  font-size: clamp(3rem, 5.5vw, 5.5rem);
+  line-height: 1.05;
+}
+
+.board[data-density="compact"] .visitor-name {
+  font-size: clamp(1.7rem, 2.3vw, 2.5rem);
+  line-height: 1.1;
+}
+
+.board[data-density="roomy"] .worker-name {
+  font-size: clamp(1.6rem, 2.4vw, 2.4rem);
+}
+
+.board[data-density="compact"] .worker-name {
+  font-size: clamp(1.05rem, 1.4vw, 1.4rem);
+}

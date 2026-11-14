@@ -1,0 +1,7 @@
+node_modules/
+tools/
+client/dist/
+data/**
+!data/.gitkeep
+.env
+*.log
